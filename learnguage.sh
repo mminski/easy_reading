@@ -11,7 +11,9 @@ while true;do
           word=$(gawk -f <(curl -Ls git.io/translate) -show-original n -show-original-phonetics n -show-prompt-message n -show-languages n -show-alternatives n -show-dictionary n -no-ansi en:de `xclip -selection primary -o`)
 notify-send "$copycopy | $word" #under OSX replace this line with: "growlnotify -m "$copycopy | $word" -n "EasyReading"
 echo "$copycopy|$word"  >> translations
+            sleep 2
             break 1 
         fi
     ;done
+    sleep 1
 ;done
